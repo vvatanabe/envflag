@@ -5,8 +5,8 @@ import "testing"
 func TestStrToBool(t *testing.T) {
 
 	tests := []struct {
-		value  string
-		want   bool
+		value string
+		want  bool
 	}{
 		{"true", true},
 		{"false", false},
@@ -20,4 +20,3 @@ func TestStrToBool(t *testing.T) {
 		}
 	}
 }
-

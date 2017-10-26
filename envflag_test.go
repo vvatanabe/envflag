@@ -1,15 +1,15 @@
 package envflag
 
 import (
-	"testing"
 	"os"
+	"testing"
 )
 
 func TestGetEnviron(t *testing.T) {
 
 	tests := []struct {
-		key  string
-		value          string
+		key   string
+		value string
 	}{
 		{"ENV_FLAG_INT", "1"},
 		{"ENV_FLAG_STR", "hello"},
