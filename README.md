@@ -1,4 +1,4 @@
-# envflag
+# envflag [![Build Status](https://travis-ci.org/vvatanabe/envflag.svg?branch=master)](https://travis-ci.org/vvatanabe/envflag)
 GO library for parsing environment variables and combining them with command-line flags.
 
 ## Requires
