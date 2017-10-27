@@ -20,7 +20,7 @@ func (environ environ) toArgs(opts *options) []string {
 			hyphen = "--"
 		}
 		name := hyphen + k
-		if opts.lowercase {
+		if opts.toLowercase {
 			name = strings.ToLower(name)
 		}
 

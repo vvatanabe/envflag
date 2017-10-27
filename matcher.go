@@ -3,8 +3,9 @@ package envflag
 import "strings"
 
 type matcher struct {
-	exacts   stringSlice
-	prefixes stringSlice
+	ignoreCase bool
+	exacts     stringSlice
+	prefixes   stringSlice
 }
 
 func (m *matcher) addExact(exact string) {
@@ -20,10 +21,25 @@ func (m *matcher) hasPattern() bool {
 }
 
 func (m *matcher) match(target string) bool {
-	if m.exacts.exists(func(s string) bool { return target == s }) {
+	if m.ignoreCase {
+		target = strings.ToLower(target)
+	}
+	matchExact := func(s string) bool {
+		if m.ignoreCase {
+			s = strings.ToLower(s)
+		}
+		return target == s
+	}
+	if m.exacts.exists(matchExact) {
 		return true
 	}
-	if m.prefixes.exists(func(s string) bool { return strings.HasPrefix(target, s) }) {
+	matchPrefix := func(s string) bool {
+		if m.ignoreCase {
+			s = strings.ToLower(s)
+		}
+		return strings.HasPrefix(target, s)
+	}
+	if m.prefixes.exists(matchPrefix) {
 		return true
 	}
 	return false

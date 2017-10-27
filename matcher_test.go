@@ -4,6 +4,7 @@ import "testing"
 
 func TestMatcherMatchPrefix(t *testing.T) {
 	matcher := &matcher{
+		false,
 		[]string{},
 		[]string{},
 	}
@@ -24,6 +25,7 @@ func TestMatcherMatchPrefix(t *testing.T) {
 
 func TestMatcherMatchExact(t *testing.T) {
 	matcher := &matcher{
+		false,
 		[]string{},
 		[]string{},
 	}
@@ -44,6 +46,7 @@ func TestMatcherMatchExact(t *testing.T) {
 
 func TestMatcherHasPattern(t *testing.T) {
 	matcher := &matcher{
+		false,
 		[]string{},
 		[]string{},
 	}

@@ -8,6 +8,7 @@ import (
 func Args(opts ...Option) []string {
 	o := &options{
 		&matcher{
+			false,
 			[]string{},
 			[]string{},
 		},
@@ -30,11 +31,4 @@ func getEnviron() environ {
 		environ[k] = v
 	}
 	return environ
-}
-
-type options struct {
-	matcher    *matcher
-	longHyphen bool
-	lowercase  bool
-	boolValue  bool
 }
