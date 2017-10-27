@@ -15,7 +15,7 @@ $ go get github.com/vvatanabe/envflag
 
 ## Usage
 
-Please see also example code.
+Please see also [example code](https://github.com/vvatanabe/envflag/blob/master/example/main.go).
 
 ### Basic
 ``` go
