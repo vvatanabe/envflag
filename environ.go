@@ -10,9 +10,8 @@ type environ map[string]string
 
 func (environ environ) toArgs(opts *options) []string {
 	var args []string
-	shouldBeMatch := opts.matcher.hasPattern()
 	for k, v := range environ {
-		if shouldBeMatch && !opts.matcher.match(k) {
+		if !opts.matcher.match(k) {
 			continue
 		}
 		hyphen := "-"

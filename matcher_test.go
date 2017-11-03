@@ -44,14 +44,3 @@ func TestMatcherMatchExact(t *testing.T) {
 	}
 }
 
-func TestMatcherHasPattern(t *testing.T) {
-	matcher := &matcher{
-		false,
-		[]string{},
-		[]string{},
-	}
-	matcher.addExact("test_1")
-	if !matcher.hasPattern() {
-		t.Fatal("not has match pattern")
-	}
-}

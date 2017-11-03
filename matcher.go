@@ -16,10 +16,6 @@ func (m *matcher) addPrefix(prefix string) {
 	m.prefixes = append(m.prefixes, prefix)
 }
 
-func (m *matcher) hasPattern() bool {
-	return !m.exacts.isEmpty() || !m.prefixes.isEmpty()
-}
-
 func (m *matcher) match(target string) bool {
 	if m.ignoreCase {
 		target = strings.ToLower(target)
